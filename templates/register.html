@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+</head>
+<body>
+    {% comment %} FLASK RENDER {% endcomment %}
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+    
+    <form method="POST" action="/register">
+        Username: <input type="text" name="username"><br>
+        Password: <input type="password" name="password"><br>
+        Confirm Password: <input type="password" name="conf_password"><br>
+        <input type="submit" value="Register">
+    </form>
+
+</body>
+</html>
